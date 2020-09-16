@@ -1,0 +1,36 @@
+$header-color: rgb(80, 80, 80);
+
+.Home {
+    // background-color: rgb(75, 75, 75);
+    // background-color: rgb(59, 59, 59);
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    // border-radius: 10px;
+}
+
+.Home__Left-Con,
+.Home__Right-Con  {
+    width: 45%;
+    height: 100%;
+}
+
+.Home__Left-Con {
+    margin-left: 15px;
+}
+
+.Home__Right-Con {
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 800px) {
+    .Home {
+        display: flex;
+        flex-direction: column;
+        height: 1500px;
+    }
+    .Home__Left-Con,
+    .Home__Right-Con {
+        width: 100%;
+    }
+}
