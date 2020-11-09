@@ -14,6 +14,15 @@
 
 .Spending__Left-Con {
     margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .Spending-Info__Lines {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        // border: 1px solid red;
+    }
 }
   
 .Spending__Right-Con {

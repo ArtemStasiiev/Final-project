@@ -1,13 +1,17 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState  } from 'react';
 import { Redirect } from 'react-router-dom';
 import UserContext from '../context';
 
 export default function clientPrivate(Component) {
     return function WrappedComponent(props) {
         const userService = useContext(UserContext);
-
-        return userService.user
-            ? <Component {...props} user={userService.user} />
+        const [user, seUser] = useState({});
+        useEffect( () => {
+            const user = userService.getCurrentUser();
+            seUser(user);
+        }, []);
+        return user
+            ? <Component {...props} user={user} />
             : <Redirect to='/login' />
     }
 }

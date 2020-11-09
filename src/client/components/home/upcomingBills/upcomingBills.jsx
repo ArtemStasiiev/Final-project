@@ -2,82 +2,25 @@
 import React, {useState, useEffect} from 'react'
 import '../../../styles/components/home/upcomingBills.scss';
 
-// class UpcomingBills extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             selectedDate: null
-//         }
-//     }
-
-//     componentDidMount() {
-//         this.setDate();
-//       }
-    
-//       setDate = (newDate) => {
-//         const date = newDate || new Date();
-//         this.setState({
-//           selectedDate:
-//             date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
-//         });
-//       };
-//       getNextDate = () => {
-//         const { selectedDate } = this.state
-
-//         const today = new Date(selectedDate);
-//         const currentMonth = new Date(selectedDate).getMonth()
-//         const nextDate = new Date(today.getFullYear(), currentMonth+1, today.getDate())
-//         this.setDate(nextDate)
-//       }
-
-//     render() {
-//         return (
-//             <div className="Bills">
-//                 <div className="Bills__Left-Con">
-//                     <img src={this.props.image} alt="" />
-
-//                     <div className="Bills__Left-Con__Info">
-//                         <div>{this.props.title}</div>
-//                         <div>{this.state.selectedDate}</div>
-//                     </div>
-//                 </div>
-
-//                 <div className="Bills__Right-Con">
-//                     ${this.props.price}
-//                     <button onClick={this.getNextDate}>Pay</button>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-
-// export default UpcomingBills
-
-
 export default function UpcomingBills(props) {
 
-    const [selectedDate, setSelectedDate] = useState(null);
-
-    useEffect(() => {
-        setDate();
-    });
-
-    const setDate = (newDate) => {
-        const date = newDate || new Date();
-        setSelectedDate(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate())
-    }
+    const date = new Date();
+    const currentDate = date.getFullYear() + "-" + (date.getMonth() + 1 ) + "-" + date.getDate()
+    const [selectedDate, setSelectedDate] = useState(currentDate);
 
     const getNextDate = () => {
         const today = new Date(selectedDate);
         const currentMonth = new Date(selectedDate).getMonth()
         const nextDate = new Date(today.getFullYear(), currentMonth+1, today.getDate())
-        setDate(nextDate)
+        // setDate(nextDate)
+        const date = nextDate || new Date();
+        setSelectedDate(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate())
     }
 
     return (
         <div className="Bills">
             <div className="Bills__Left-Con">
-                <img src={props.image} alt="" />
+                <img src={require (`../../../../img/${props.image}`)} alt="" />
 
                 <div className="Bills__Left-Con__Info">
                     <div>{props.title}</div>

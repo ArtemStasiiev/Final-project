@@ -1,22 +1,40 @@
 .Spending-Breakdown {
     width: 100%;
-    height: 50%;
+    height: 35%;
+    // border: 1px solid red;
 }
 
 .Spending-Breakdown__Items {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 10px;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
 }
 
 .Spending-Breakdown__Type {
-    margin-left: 10px;
+    // margin-left: 10px;
+    font-size: 14px;
 } 
 
 .Spending-Breakdown__Price {
-    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    // margin-right: 10px;
     color: rgb(104, 104, 104);
+    font-size: 12px;
+    // margin-left: 10px;
+    .Spending-Breakdown__Line-Background {
+        width: 200px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        .Spending-Breakdown__Line {
+            width: 70%;
+            height: 4px;
+            border-radius: 5px;
+            background-color: rgb(35, 191, 126);
+        }
+    }
 }
 
 @media screen and (max-width: 800px) {

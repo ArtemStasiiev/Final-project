@@ -1,10 +1,13 @@
 // import React, { useContext } from 'react';
 import React from 'react';
-import UserContext from '../../context';
+// import UserContext from '../../context';
 
 import '../../styles/pages/transfers.scss';
+// import Payments from '../../components/transfers/payments/payments'
+// import Wallet from '../../components/home/wallet/wallet';
+import SendMoney from '../../components/transfers/sendMoney/sendMoney';
+import TransferField from '../../components/transfers/transfer/transferField';
 import Payments from '../../components/transfers/payments/payments'
-import Wallet from '../../components/home/wallet/wallet';
 // const TransfersPage = () => {
 //     const userService = useContext(UserContext);
 //     console.log('TransfersPage', userService);
@@ -44,15 +47,20 @@ import Wallet from '../../components/home/wallet/wallet';
 
 export default function Transfer() {
 
-    const cardMoney = 16.234
+    // const cardMoney = 16.234
 
     return (
         <div className="Transfer">
             <div className="Transfer__Left-Con">
-                <Payments />
+                {/* <Payments /> */}
+                <SendMoney />
+            </div>
+            <div className="Transfer__Center-Con">
+                <TransferField />
             </div>
             <div className="Transfer__Right-Con">
-                <Wallet cardMoney={cardMoney} className="Wallet" />
+                {/* <Wallet cardMoney={cardMoney} className="Wallet" /> */}
+                <Payments />
             </div>
         </div>
     )

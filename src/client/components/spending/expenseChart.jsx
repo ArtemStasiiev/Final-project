@@ -46,9 +46,10 @@ export default function ExpenseChart() {
                     label: 'Spendings per month',
                     data: [4, 5, 1, 10, 32, 2, 12, 50, 43, 56, 23, 41, 70, 34, 10, 30, 11, 28, 73, 45, 23, 50, 47, 65, 58, 47, 39, 56, 80, 85, 90, 100],
                     borderColor: 'rgb(85, 73, 252)',
-                    lineTension: 0.1,
-                    pointBackgroundColor: 'white'
-                },
+                    lineTension: 0.3,
+                    pointBackgroundColor: 'white',
+                    borderColor: 'rgb(253, 57, 17)'
+                }
             ]
         }
 
@@ -56,7 +57,19 @@ export default function ExpenseChart() {
         <div className="ExpenseChartCon">
             <Line
                 options={{
-                    responsive: true
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display:false
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display:false
+                            }   
+                        }]
+                    }
                 }}
                 legend={{
                     display: false

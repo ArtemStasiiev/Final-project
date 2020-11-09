@@ -10,15 +10,17 @@ export default function Wallet() {
             <header>Wallet</header>
             <div className="Card-Con">
                 <div className="Card">
+                    <div className="Card-Content">
                     <div className="Card__Usd-Number">
                         USD
-                        </div>
+                    </div>
                     <div className="Card__Money-Con">
-                        <div>${cardMoney.toFixed(3)}</div>
+                        ${cardMoney.toFixed(3)}
                     </div>
                     <div className="Card__Number-Con">
                         <div className="Card__Number">**** 4439</div>
                         <img src={MasterCard} alt="" />
+                    </div>
                     </div>
                 </div>
             </div>

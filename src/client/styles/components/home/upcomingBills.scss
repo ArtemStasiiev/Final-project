@@ -4,52 +4,56 @@
 }
 
 .Upcoming-Bills__Month {
-    width: 20%;
-    background-color: black;
+    width: 15%;
+    background-color: rgb(40, 41, 46);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30px;
-    color: white;
+    height: 20px;
+    color: rgb(116, 116, 116);
+    font-size: 12px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .Bills {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 12px;
     border-radius: 10px;
-}
-
-.Bills:hover {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.3);
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
 }
 
 .Bills__Left-Con {
     width: 80%;
     display: flex;
-    // border: 1px solid red; 
-}
-
-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 10px;
-    border-radius: 50%;
-    // border: 2px solid rgb(104, 104, 104);
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        // margin-left: 10px;
+        // margin-top: 3px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
 
 .Bills__Left-Con__Info {
     margin-left: 10px;
-    // border: 1px solid black;
-    height: 80%;
-    margin-top: 5px;
+    // height: 80%;
+    div {
+        color: rgb(225, 225, 227);
+        font-size: 14px;
+    }
 
     .BillsDate {
         color: rgb(80, 80, 80);
         font-size: 14px;
         margin-top: 5px;
+        font-size: 12px;
     }
 }
 
@@ -58,18 +62,17 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 10px;
-    color: rgb(104, 104, 104);
-
-}
-
-.Bills__Right-Con button {
-    background-color: rgb(24, 24, 24);
-    color: rgb(104, 104, 104);
-    border: none;
-    // color: white;
-    cursor: pointer;
-    outline: none;
+    // margin-right: 10px;
+    font-size: 14px;
+    color: rgb(225, 225, 227);
+    button {
+        background-color: rgb(20, 20, 22);
+        color: rgb(104, 104, 104);
+        border: none;
+        cursor: pointer;
+        outline: none;
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -78,12 +81,12 @@ img {
     }
     .Bills__Right-Con {
         width: 20%;
+        button {
+            font-size: 17px;
+        }
     }
     .Bills {
         margin-top: 30px;
-        font-size: 17px;
-    }
-    .Bills__Right-Con button {
         font-size: 17px;
     }
 }

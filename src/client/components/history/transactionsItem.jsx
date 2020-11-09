@@ -44,14 +44,14 @@ export default function TransactionsItem(props) {
     return (
         <div className="TransactionsItem">
             <div className="TransactionsItem__Left-Con">
-                <img src={props.image} alt=""/>
+                <img src={require(`../../../img/${props.image}`)} alt=""/>
                 <div>
                     {props.title}
                 </div>
             </div>
 
             <div className="TransactionsItem__Right-Con">
-                ${props.sum}
+                {props.sum}
             </div>
         </div>
     )

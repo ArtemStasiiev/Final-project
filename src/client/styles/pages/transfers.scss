@@ -7,18 +7,13 @@
 }
 
 .Transfer__Left-Con,
-.Transfer__Right-Con {
-  width: 45%;
+.Transfer__Right-Con,
+.Transfer__Center-Con {
+  width: 32%;
   height: 100%;
+  // border: 1px solid red;
 }
 
-.Transfer__Left-Con {
-  margin-left: 15px;
-}
-
-.Transfer__Right-Con {
-  margin-right: 15px;
-}
 
 @media screen and (max-width: 800px) {
   .Transfer {

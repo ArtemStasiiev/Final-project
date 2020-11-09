@@ -1,5 +1,6 @@
-$card-color: rgb(56, 56, 56);
-$header-color: rgb(104, 104, 104);
+$card-color: rgb(44, 44, 44);
+$card-text-color: rgb(225, 225, 227);
+$header-color: rgb(100, 101, 108);;
 
 .Wallet-Con {
     width: 100%;
@@ -8,9 +9,8 @@ $header-color: rgb(104, 104, 104);
 
 header {
     padding: 5px;
-    // padding-left: 20px;
     border-bottom: 2px solid $header-color;
-    font-size: 20px;
+    font-size: 14px;
     color: $header-color;
 }
 
@@ -19,57 +19,64 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $card-text-color;
 }
 
 .Card {
-    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 450px;
     height: 250px;
     border-radius: 20px;
-    // background: radial-gradient(circle, rgba(190,189,205,1) 0%, rgba(122,122,122,1) 0%, rgba(92,82,82,1) 100%);
     background-color: $card-color;
-    // color: white;
+    // border: 1px solid red;
+}
+
+.Card-Content {
+    // border: 1px solid white;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .Card__Usd-Number {
     width: 100%;
-    padding: 30px;
+    // padding: 30px;
     font-size: 14px;
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 .Card__Money-Con {
     width: 100%;
-    font-size: 50px;
-    // font-weight: bold;
-}
-.Card__Money-Con div {
-    margin-left: 20px;
+    font-size: 40px;
+    margin-top: 40px;
 }
 
 .Card__Number-Con {
     width: 100%;
     height: 90px;
     font-size: 14px;
-    font-weight: bold;
+    margin-top: 35px;
+    // font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
 .Card__Number-Con img {
-    margin-right: 20px;
-    width: 80px;
-    height: 80px;
+    // margin-right: 20px;
+    width: 60px;
+    height: 60px;
     border: none;
+
 }
 
 .Card__Number {
     margin-bottom: 15px;
-}
-
-.Card__Number-Con div {
-    margin-left: 20px;
+    // border: 1px solid red;
 }
 
 @media screen and (max-width: 800px) {

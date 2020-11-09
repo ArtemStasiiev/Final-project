@@ -1,4 +1,4 @@
-$header-color: rgb(80, 80, 80);
+$header-color: 	rgb(48, 47, 52);
 
 .Home {
     // background-color: rgb(75, 75, 75);
@@ -10,17 +10,18 @@ $header-color: rgb(80, 80, 80);
 }
 
 .Home__Left-Con,
-.Home__Right-Con  {
-    width: 45%;
+.Home__Right-Con,
+.Home__Center-Con  {
+    width: 32%;
     height: 100%;
-}
-
-.Home__Left-Con {
-    margin-left: 15px;
+    // border: 1px solid red;
 }
 
 .Home__Right-Con {
-    margin-right: 15px;
+    // margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 800px) {

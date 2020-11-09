@@ -1,80 +1,15 @@
 // import React, { Component } from 'react';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../../../styles/components/home/sendMoney.scss';
 import NumberFormat from 'react-number-format';
-// import { useState } from 'react';
+import SendMoneyPhotos from './sendMoneyItems/sendMoneyPhotos';
+import RecentOperations from './recentOperations/recentOperations';
+// import photo from '../../../../img/face-photo(1).jpg'
 
-// class SendMoney extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             cardNumber: 0,
-//             sum: 0,
-//             // disabled: true
-//         }
-//     }
-//     handleCardNumberChange = (event) => {
-//         this.setState({ cardNumber: event.target.value });
-//     }
+import {sendMoneyPhotos, recentOperations} from '../../../config/data.config'
 
-//     handleSumChange = (event) => {
-//         this.setState({ sum: event.target.value });
-//     }
-
-//     handleSubmit = (event) => {
-//         event.preventDefault();
-//     }
-
-//     clearInputValues = (event) => {
-//         this.setState({cardNumber: 0, sum: 0})
-//     }
-
-//     render() {
-//         const { cardNumber, sum } = this.state; 
-//         return (
-//             <div className="Send-Money">
-//                 <header>Send money</header>
-
-//                 <form className="Send-Money__Form">
-//                     <div className="Send-Money__Inputs__Input">
-//                         <NumberFormat
-//                             type="text"
-//                             name="cardNumber"
-//                             format="#### #### #### ####"
-//                             mask="_ "
-//                             autoComplete="off"
-//                             required
-//                             onChange={this.handleCardNumberChange}
-//                             value={this.state.cardNumber} />
-//                         <label for="cardNumber" className="Send-Money__Inputs__Input-Label">
-//                             <span className="Send-Money__Inputs__Input-Span">Card Number</span>
-//                         </label>
-//                     </div>
-
-//                     <div className="Send-Money__Inputs__Input">
-//                         <NumberFormat
-//                             type="text" name="cardNumber"
-//                             thousandSeparator={true}
-//                             prefix={'$'}
-//                             autoComplete="off"
-//                             required
-//                             onChange={this.handleSumChange}
-//                             value={this.state.sum} />
-//                         <label for="cardNumber" className="Send-Money__Inputs__Input-Label">
-//                             <span className="Send-Money__Inputs__Input-Span">Sum</span>
-//                         </label>
-//                     </div>
-//                     <button type="button" className="Send-Money__Button" onClick={this.clearInputValues} disabled={!sum.length || cardNumber.length > 19}>Send</button>
-//                 </form>
-//             </div>
-//         )
-//     }
-// }
-// 
-// export default SendMoney;
-
-export default function SendMoney() {
-
+export default function SendMoney(props) {
+    // console.log(props)
     const [cardNumber, setCardNumber] = useState('');
     const [sum, setSum] = useState(0);
 
@@ -95,27 +30,48 @@ export default function SendMoney() {
         setSum(0);
     }
 
+    const sendMoneyPhoto = sendMoneyPhotos.map(element => 
+        <SendMoneyPhotos 
+        photo={element.image} />);
+    
+    const recentOperationsData = recentOperations.map(element =>
+        <RecentOperations 
+            title={element.title}
+            price={element.price}
+            image={element.image}/>
+        )
+
     return (
         <div className="Send-Money">
             <header>Send money</header>
 
             <form className="Send-Money__Form">
-                <div className="Send-Money__Inputs__Input">
+                <div className="Send-Money__Recent">Recent</div>
+                <div className="contacts-con">
+                    <button className="plus-btn">+</button>
+                    <div className="img-con">
+                        {sendMoneyPhoto}
+                    </div>
+                </div>
+                <div className="Recent-Operations__Con">
+                    <header>Recent operations</header>
+                    <div className="Recent-Operations__Today">Today</div>
+                        <div className="Recent-Operations__Items-Con">
+                            {recentOperationsData}
+                        </div>
+                </div>
+                {/* <div className="Send-Money__Inp-Con">
                     <NumberFormat
                         type="text"
                         name="cardNumber"
                         format="#### #### #### ####"
-                        mask="_ "
+                        mask=" "
                         autoComplete="off"
                         required
                         onChange={handleCardNumberChange}
-                        value={cardNumber} />
-                    <label for="cardNumber" className="Send-Money__Inputs__Input-Label">
-                        <span className="Send-Money__Inputs__Input-Span">Card Number</span>
-                    </label>
-                </div>
+                        value={cardNumber}
+                        className="sendMoney-input" />
 
-                <div className="Send-Money__Inputs__Input">
                     <NumberFormat
                         type="text" name="cardNumber"
                         thousandSeparator={true}
@@ -123,13 +79,15 @@ export default function SendMoney() {
                         autoComplete="off"
                         required
                         onChange={handleSumChange}
-                        value={sum} />
-                    <label for="cardNumber" className="Send-Money__Inputs__Input-Label">
-                        <span className="Send-Money__Inputs__Input-Span">Sum</span>
-                    </label>
+                        value={sum}
+                        className="sendMoney-input" />
                 </div>
-                <button type="button" className="Send-Money__Button" onClick={clearInputValues} disabled={!sum.length || cardNumber.length > 19}>Send</button>
+                <div className="Send-Money__Button-Con">
+                    <button type="button" className="Send-Money__Button" onClick={clearInputValues} disabled={!sum.length || cardNumber.length > 19}>Send</button>
+                </div> */}
+                
             </form>
+
         </div>
     )
 }

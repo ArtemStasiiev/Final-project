@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
-import './styles/Root.css'
+// import {useLocation} from "react-router-dom";
+import './styles/Root.scss'
 import {Switch, Route, Link, useLocation} from 'react-router-dom';
 // import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
 // import {CreditCard, Home, EuroSymbol, EmojiPeople} from '@material-ui/icons';
@@ -7,7 +8,7 @@ import clientPrivate from './hoc/client-private';
 import UserContext from './context';
 
 // pages
-import WelcomePage from './pages/welcome';
+// import WelcomePage from './pages/welcome';
 import Navbar from './components/navbar/navbar';
 import LoginPage from './components/login/login';
 import RegisterPage from './components/register/register';
@@ -26,6 +27,10 @@ const Root = () => {
     const currentValueFromPath = pathname.split('/')[1];
 
     const [value, setValue] = useState(currentValueFromPath);
+    const [userData, setUserData] = useState(null);
+
+
+    const urls = ['/', '/transfers', '/spending', '/investing', '/history' ];
 
     const handleChange = (event, newValue) => {
         setValue(newValue)
@@ -40,15 +45,24 @@ const Root = () => {
         //     if (!userData) return;
         //     // setUserData(userData);
         // });
+
+        const user = userService.getCurrentUser()
+        if (user) {
+            setUserData(user)
+        }  
     }, []);
+    console.log(pathname)
 
     // const encodeUri = encodeURIComponent(window.location.href);
     // const redirectUrl = `/signin?returnurl=${encodeUri}`;
 
+
+
+
     return (
         <div className="container">
             {/* <main> */}
-            {userService.user &&
+            {   urls.includes(pathname) &&
                 // <BottomNavigation value={value} onChange={handleChange}>
                 //     <BottomNavigationAction component={Link} to="/" showLabel={true} label="Home" value="home"
                 //                             icon={<Home/>}/>
@@ -59,7 +73,8 @@ const Root = () => {
                 //     <BottomNavigationAction component={Link} to="/account" showLabel={true} label="Account" value="nearby"
                 //                             icon={<EmojiPeople/>}/>
                 // </BottomNavigation>
-                <Navbar />
+                <Navbar /> 
+                // <Navbar />
             }
             <div className="pagesCon">
                 <Switch>

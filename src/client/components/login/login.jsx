@@ -18,12 +18,17 @@ const Signin = () => {
     const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        userService.userChange.subscribe(async userData => {
-            if (!userData) return;
-            console.log('in subscr')
-            setUserData(userData);
-        });
-    });
+        // userService.userChange.subscribe(async userData => {
+        //     if (!userData) return;
+        //     console.log('in subscr')
+        //     setUserData(userData);
+        // });
+        const user = userService.getCurrentUser()
+        if (user) {
+            setUserData(user)
+        }  
+        console.log(user)
+    }, []);
 
     const handleUsername = e => { setUsername(e.target.value) };
     const handlePassword = e => { setPassword(e.target.value) };

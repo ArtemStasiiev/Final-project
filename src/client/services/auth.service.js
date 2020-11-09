@@ -47,23 +47,32 @@ export default class AuthServices {
     }
 
     async signin(userData) {
-        let response = await api.signinUser(userData);
-        console.log(response);
+        // let response = await api.signinUser(userData);
+        // console.log(response);
 
-        if (statuses[response.status] === 'success') { // if (response.status === 200)
-            this.userName = response.data.username;
-            this.user = response.data;
-            this.userChange.next(this.user);
-            this._login = true;
+        // if (statuses[response.status] === 'success') { // if (response.status === 200)
+        //     this.userName = response.data.username;
+        //     this.user = response.data;
+        //     this.userChange.next(this.user);
+        //     this._login = true;
 
-            const encodedUserId = encodeURIComponent(response.data.id);
-            document.cookie = `userId=${encodedUserId}`;
-            console.log('signed in');
-            return this.user;
-        }
+        //     const encodedUserId = encodeURIComponent(response.data.id);
+        //     document.cookie = `userId=${encodedUserId}`;
+        //     console.log('signed in');
+        //     return this.user;
+        // }
 
-        console.log('response error:', response);
+        // console.log('response error:', response);
         // throw new Error(response.status);
+
+        try {
+            let response = await api.signinUser(userData);
+            localStorage.setItem("user", JSON.stringify(response.data));
+            return response;
+        } catch (e) {
+            console.log( e.response, 'error')
+            return e.response;
+        }
     }
 
     isSignedIn() {
@@ -72,11 +81,16 @@ export default class AuthServices {
     }
 
     signout() {
-        console.log('logged out');
-        this.userName = null;
-        this.user = {};
-        this.userChange.next(this.userName);
-        this._login = false;
+        // console.log('logged out');
+        // this.userName = null;
+        // this.user = {};
+        // this.userChange.next(this.userName);
+        // this._login = false;
+        localStorage.removeItem("user");
     }
+
+    getCurrentUser() {
+        return JSON.parse(localStorage.getItem('user'));;
+      }
 
 }

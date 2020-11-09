@@ -2,37 +2,34 @@ import React, { Component } from 'react';
 import '../../styles/pages/home.scss';
 import Wallet from '../../components/home/wallet/wallet';
 import SendMoney from '../../components/home/sendMoney/sendMoney';
-import UpcomingBills from '../../components/home/upcomingBills/upcomingBills'
-import SpendingBreakdown from '../../components/home/spendingBreakdown/spendingBreakdown'
-import { resetIdCounter } from 'react-tabs';
+import UpcomingBills from '../../components/home/upcomingBills/upcomingBills';
+import SpendingBreakdown from '../../components/home/spendingBreakdown/spendingBreakdown';
+import SafeToSpend from '../../components/home/safeToSpend/safeToSpend';
+import ExpenseIncomeChart from '../../components/home/expenseIncomeChart/expenseIncomeChart';
+import MyGoals from '../../components/home/myGoals/myGoals';
+// import { resetIdCounter } from 'react-tabs';
 // import upcomingBills from './UpcomingBills/UpcomingBills';
 // import moment from 'moment'
 
-const upcomingBills = [
-    { title: 'Netflix', price: 12.00, image: require('../../../img/netflix-icon.jpg'), id: 1, date: '2020-07-21' },
-    { title: 'Apple TV', price: 10.00, image: require('../../../img/apple-tv-icon.svg'), id: 2, date: '2020-07-21' },
-    { title: '+38 063 56 87 154', price: 5.00, image: require('../../../img/lifecell-icon.jpg'), id: 3, date: '2020-07-21' }
-];
+import {sendMoney, upcomingBills, spendingBreakdown, monthNames } from '../../config/data.config'
 
-const monthNames = ["January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December"
-];
+// const selectedDate = null;
 
-const spendingBreakdown = [
-    { title: 'Grocery', sum: 766.38},
-    { title: 'Bills', sum: 456.91 },
-    { title: 'Transport', sum: 255.28 },
-    { title: 'Subscriptions', sum: 181.42 },
-    { title: 'Entertainment', sum: 134.56 },
-    { title: 'Apparel', sum: 96.83 },
-    { title: 'Other', sum: 54.73 }
-];
-
-const selectedDate = null;
-
-const startDate = new Date('2020-07-21');
+// const startDate = new Date('2020-07-21');
 
 export default function Home() {
+
+    // const sendMoneyData = () => {
+    //     console.log(sendMoney)
+
+    //     return sendMoney.map(element => 
+    //         <SendMoney 
+    //             photo={element.photo} />)
+    // } 
+
+    // const sendMoneyData = sendMoney.map(element => 
+    //     <SendMoney 
+    //     photo={element.photo} />);
 
     const upcomingBillsData = upcomingBills.map(element =>
         <UpcomingBills
@@ -45,20 +42,35 @@ export default function Home() {
     const spendingBreakdownData = spendingBreakdown.map(element =>
         <SpendingBreakdown
             title={element.title}
-            color={element.color}
+            // color={element.color}
+            lineWidth={element.lineWidth}
             ammount={element.sum} />);
+
 
     return (
         <div className="Home">
         <div className="Home__Left-Con">
             <Wallet />
+            {/* {sendMoneyData()} */}
             <SendMoney />
         </div>
+
+        <div className="Home__Center-Con">
+            <SafeToSpend />
+            <ExpenseIncomeChart />
+            <MyGoals />
+        </div>
+
         <div className="Home__Right-Con">
             <div className="Upcoming-Bills">
                 <header>Upcoming Bills </header>
                 <div className="Upcoming-Bills__Month">
                     {monthNames[new Date().getMonth()]}
+                </div>
+                {upcomingBillsData}
+                <header></header>
+                <div className="Upcoming-Bills__Month">
+                    {monthNames[new Date().getMonth() + 1]}
                 </div>
                 {upcomingBillsData}
             </div>
