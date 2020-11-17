@@ -1,4 +1,4 @@
-.Investing {
+.investing {
     background-color: rgb(24, 24, 24);
     width: 96%;
     display: flex;
@@ -8,21 +8,23 @@
     overflow-y: scroll;
 }
 
-.Investing__Left-Con,
-.Investing__Right-Con  {
+.investing__left,
+.investing__right  {
     width: 49%;
     height: 100%;
 }
 
-@media screen and (max-width: 800px) {
-    .Investing {
+@media screen and (max-width: 1504px) {
+    .investing {
         flex-direction: column;
         overflow: auto;
-        height: 1300px;
+        width: 720px;
+        // height: 1300px;
+        .investing__left,
+        .investing__right  {
+            width: 70%;
+            // height: 100%;
+        }
     }
-    .Investing__Left-Con,
-    .Investing__Right-Con  {
-        width: 100%;
-        height: 100%;
-    }
+
 }

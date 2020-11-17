@@ -2,13 +2,15 @@
 $navbar-color: rgb(30, 30, 32);
 $navbar-icon-background-color: rgb(35, 36, 40);
 $icons-color: rgb(100, 101, 108);
-$items-background-color_hover: rgb(62, 63, 67);
+$items-background-color_hover: rgb(55, 56, 60);
 $items-color_hover: rgb(166, 166, 169);
 @mixin item-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 
 .Navbar-Con {
     width: 100%;
@@ -20,13 +22,15 @@ $items-color_hover: rgb(166, 166, 169);
 .PayPal-Icon {
     font-size: 40px;
     color: $icons-color;
-    margin-left: 50px;
+    margin-left: 5%;
 }
 
 .Navbar {
-    height: 64px;
+    height: 65px;
+    // height: 100px;
     width: 96%;
-    background-color: $navbar-color;
+    // width: 100%;
+    background-color: $navbar-color;   
     border: none;
     border-radius: 10px;
     display: flex;
@@ -39,8 +43,10 @@ $items-color_hover: rgb(166, 166, 169);
 .Navbar-Items {
     list-style: none;
     width: 350px;
+    // width: 23%;
     display: flex;
     justify-content: space-between;
+    // border: 1px solid red;
 }
 
 .Navbar-Item {
@@ -48,19 +54,19 @@ $items-color_hover: rgb(166, 166, 169);
     height: 50px;
     font-size: 10px;
     cursor: pointer;
-    color: white;
+    // color: white;
     border-radius: 10px;
     background-color: $navbar-icon-background-color;
     box-shadow: 5px 5px 5px black;
-        &:hover {
-            background-color: $items-background-color_hover;
-            .Navbar-Items__Name {
-                color: $items-color_hover;
-            }
-            .Navbar-Items__Icon-Con {
-                color: $items-color_hover;
-            }
-        }
+        // &:hover {
+        //     background-color: $items-background-color_hover;
+        //     .Navbar-Items__Name {
+        //         color: $items-color_hover;
+        //     }
+        //     .Navbar-Items__Icon-Con {
+        //         color: $items-color_hover;
+        //     }
+        // }
 }
 
 .Navbar-Items__Name {
@@ -68,14 +74,13 @@ $items-color_hover: rgb(166, 166, 169);
     font-weight: bold;
     height: 10%;
     color: $icons-color;
-
 }
 
 .Navbar-Items__Icon-Con {
     height: 70%;
     @include item-center;
     color: $icons-color;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .AuthorizationIcon {
@@ -84,15 +89,20 @@ $items-color_hover: rgb(166, 166, 169);
     font-size: 30px;
     color: $icons-color;
     cursor: pointer;
-    margin-right: 50px;
+    margin-right: 5%;
 }
 
-@media screen and (max-width: 800px) {
+.main-nav-active {
+    background-color: rgb(55, 56, 60);
+}
+
+@media screen and (max-width: 700px) {
     .PayPal-Icon {
-        font-size: 35px;
+        font-size: 30px;
     }
     .Navbar-Items {
-        width: 280px;
+        // width: 60%;
+        width: 250px;
     }
     .Navbar-Item {
         width: 40px;
@@ -103,5 +113,8 @@ $items-color_hover: rgb(166, 166, 169);
     }
     .Navbar-Items__Icon-Con {
         height: 100%;
+    }
+    .AuthorizationIcon {
+        font-size: 25px;
     }
 }

@@ -27,13 +27,13 @@ import '../../styles/pages/investing.scss'
 
 export default function Investing() {
     return (
-        <div className="Investing">
-            <div className="Investing__Left-Con">
+        <div className="investing">
+            <div className="investing__left">
                 <AmazonStock />
                 <FacebookStock />
             </div>
 
-            <div className="Investing__Right-Con">
+            <div className="investing__right">
                 <TeslaStock />
                 <Nvidia />
             </div>

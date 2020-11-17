@@ -9,11 +9,13 @@ export default function Payments() {
             icon={element.icon}
             name={element.name}/>)
     return (
-        <div className="Payments">
+        <div className="payments">
             <header>Payments</header>
 
-            <div className="Payments-Items-Con">
-                {paymentItemsData}
+            <div className="payments__items">
+                <div className="payments__item-con">
+                    {paymentItemsData}
+                </div>
             </div>
         </div>
     )

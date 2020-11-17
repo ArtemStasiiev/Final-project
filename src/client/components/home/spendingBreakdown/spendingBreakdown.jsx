@@ -1,26 +1,19 @@
-import React from 'react';
-import '../../../styles/components/home/spendingBreakdown.scss';
-
-// const spendingBreakdown = (props) => {
-//     return (
-//         <div className="Spending-Breakdown__Items">
-//             <div className="Spending-Breakdown__Type">{props.title}</div>
-//             <div className="Spending-Breakdown__Price">${props.ammount}</div>
-//         </div>
-//     );
-// }
-
-// export default spendingBreakdown;
+import React from "react";
+import "../../../styles/components/home/spendingBreakdown.scss";
 
 export default function SpendingBreakdown(props) {
-    return (
-        <div className="Spending-Breakdown__Items">
-            <div className="Spending-Breakdown__Type">{props.title}</div>
-            <div className="Spending-Breakdown__Price">${props.ammount} 
-            <div className="Spending-Breakdown__Line-Background"> 
-                <div className="Spending-Breakdown__Line" style={{ width: `${props.lineWidth}` }}></div> 
-            </div> 
-            </div>
+  return (
+    <div className="spending-breakdown__items">
+      <div className="spending-breakdown__type">{props.title}</div>
+      <div className="spending-breakdown__price">
+        ${props.ammount}
+        <div className="spending-breakdown__line-background">
+          <div
+            className="spending-breakdown__line"
+            style={{ width: `${props.lineWidth}` }}
+          ></div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

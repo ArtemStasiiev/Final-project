@@ -16,49 +16,39 @@ const navbar = () => (
         <div className="Navbar">
             <FontAwesomeIcon icon={faPaypal} className="PayPal-Icon" />
             <div className="Navbar-Items">
-                <NavLink to="/" style={{ textDecoration: 'none' }}>
-                    <div className="Navbar-Item">
+                <NavLink exact to="/" className="Navbar-Item" activeClassName="main-nav-active"  style={{ textDecoration: 'none' }}>
                         <div className="Navbar-Items__Icon-Con">
-                            <FontAwesomeIcon icon={faHome} />
+                            <FontAwesomeIcon className="iconNav" icon={faHome} />
                         </div>
 
                         <div className="Navbar-Items__Name">Home</div>
-                    </div>
                 </NavLink>
-                <NavLink to="/transfers" style={{ textDecoration: 'none' }}>
-                    <div className="Navbar-Item">
+                <NavLink exact to="/transfers" className="Navbar-Item" activeClassName="main-nav-active" style={{ textDecoration: 'none' }}>
                         <div className="Navbar-Items__Icon-Con">
                             <FontAwesomeIcon icon={faCommentDollar} />
                         </div>
 
                         <div className="Navbar-Items__Name">Transfer</div>
-                    </div>
                 </NavLink>
-                <NavLink to="/spending" style={{ textDecoration: 'none' }}>
-                    <div className="Navbar-Item">
+                <NavLink exact to="/spending" className="Navbar-Item" activeClassName="main-nav-active" style={{ textDecoration: 'none' }}>
                         <div className="Navbar-Items__Icon-Con">
                             <FontAwesomeIcon icon={faChartPie} />
                         </div>
 
                         <div className="Navbar-Items__Name">Spending</div>
-                    </div>
                 </NavLink>
-                <NavLink to="/investing" style={{ textDecoration: 'none' }}>
-                    <div className="Navbar-Item">
+                <NavLink exact to="/investing" className="Navbar-Item" activeClassName="main-nav-active" style={{ textDecoration: 'none' }}>
                         <div className="Navbar-Items__Icon-Con">
                             <FontAwesomeIcon icon={faChartLine} />
                         </div>
                         <div className="Navbar-Items__Name">Investing</div>
-                    </div>
                 </NavLink>
-                <NavLink to="/history" style={{ textDecoration: 'none' }}>
-                    <div className="Navbar-Item">
+                <NavLink exact to="/history" className="Navbar-Item" activeClassName="main-nav-active" style={{ textDecoration: 'none' }}>
                         <div className="Navbar-Items__Icon-Con">
                             <FontAwesomeIcon icon={faHistory} />
                         </div>
 
                         <div className="Navbar-Items__Name">History</div>
-                    </div>
                 </NavLink>
             </div>
             <FontAwesomeIcon icon={faUserAlt} className="AuthorizationIcon" />

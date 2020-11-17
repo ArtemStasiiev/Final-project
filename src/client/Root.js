@@ -1,14 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
-// import {useLocation} from "react-router-dom";
-import './styles/Root.scss'
+import './styles/root.scss'
 import {Switch, Route, Link, useLocation} from 'react-router-dom';
-// import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
-// import {CreditCard, Home, EuroSymbol, EmojiPeople} from '@material-ui/icons';
 import clientPrivate from './hoc/client-private';
 import UserContext from './context';
 
 // pages
-// import WelcomePage from './pages/welcome';
 import Navbar from './components/navbar/navbar';
 import LoginPage from './components/login/login';
 import RegisterPage from './components/register/register';
@@ -36,15 +32,9 @@ const Root = () => {
         setValue(newValue)
     };
 
-    // const [userData, setUserData] = useState(null);
 
     useEffect(() => {
         userService.load();
-
-        // userService.userChange.subscribe(async userData => {
-        //     if (!userData) return;
-        //     // setUserData(userData);
-        // });
 
         const user = userService.getCurrentUser()
         if (user) {

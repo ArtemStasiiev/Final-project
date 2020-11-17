@@ -65,6 +65,70 @@ module.exports = {
             {icon: 'e-commerce-icon.svg', name: 'E-commerce' }
 
         ],
+        // spending page
+        spending: 1.948,
+        expenses: 1.948,
+        income: 2.543,
+        spendingInfo: [
+            { color: "rgb(43, 202, 240)", width: "26%" },
+            { color: "rgb(31, 255, 113)", width: "21%" },
+            { color: "rgb(224, 151, 30)", width: "17%" },
+            { color: "rgb(253, 57, 17)", width: "13%" },
+            { color: "rgb(153, 55, 224)", width: "9%" },
+            { color: "rgb(0, 130, 230)", width: "6%" },
+            { color: "rgb(129, 133, 142)", width: "4%" },
+          ],
+        spendingBreakdownInfo: [
+            {
+              title: "Grocery",
+              color: "rgb(43, 202, 240)",
+              sum: 766,
+              icon: 'shopping-cart-black.svg',
+              lineWidth: "100%",
+            },
+            {
+              title: "Bills",
+              color: "rgb(31, 255, 113)",
+              sum: 456,
+              icon: 'money.svg',
+              lineWidth: "90%",
+            },
+            {
+              title: "Transport",
+              color: "rgb(224, 151, 30)",
+              sum: 255,
+              icon: 'bus-black.svg',
+              lineWidth: "80%",
+            },
+            {
+              title: "Subscriptions",
+              color: "rgb(253, 57, 17)",
+              sum: 181,
+              icon: 'dollar.svg',
+              lineWidth: "70%",
+            },
+            {
+              title: "Entertainment",
+              color: "rgb(153, 55, 224)",
+              sum: 134,
+              icon: 'popcorn.svg',
+              lineWidth: "60%",
+            },
+            {
+              title: "Apparel",
+              color: "rgb(0, 130, 230)",
+              sum: 96,
+              icon: 'shirt.svg',
+              lineWidth: "50%",
+            },
+            {
+              title: "Other",
+              color: "rgb(129, 133, 142)",
+              sum: 54,
+              icon: 'more.svg',
+              lineWidth: "40%",
+            },
+          ],
         // history page
         transactionsItemsToday: [
             { title: '5367 7603 5710 9553', sum: '- $50', image: 'face-photo(1).jpg' },
@@ -77,16 +141,16 @@ module.exports = {
             { title: '9025 8503 7501 8611', sum: '+ $50', image: 'face-photo(3).jpg' },
             { title: 'Spotify', sum: '- $5', image: 'spotify-icon.png' },
             { title: 'Rocket Espresso', sum: '- $10', image: 'rocket-espresso.jpg' },
-            { title: '6804 7846 9752 2365', sum: '- $100', image: 'face-photo(4).jpg' },
+            { title: '6804 7846 9752 2365', sum: '- $100', image: 'face-photo(4).jpg' }
         ],
         transactionsItemsDaysAgo: [
             { title: 'Rocket Espresso', sum: '- $10', image: 'rocket-espresso.jpg' },
+            { title: 'Spotify', sum: '- $5', image: 'spotify-icon.png' },
         ],
         billsItems: [
             { title: 'Netflix', price: 12, image: 'netflix-icon.jpg', date: 'Mon, 25' },
             { title: 'Apple TV', price: 10, image: 'apple-tv-icon.svg', date: 'Fr, 17' },
             { title: '+38 063 56 87 154', price: 5, image: 'lifecell-icon.jpg', date: 'Wen, 14' }
-            // { title: 'Credit Agricole', price: 100, image: 'logo-credit-agricole-big.gif' },
         ],
         billsItemsMore: [
             { title: 'Netflix', price: 12, image: 'netflix-icon.jpg', date: 'Mon, 25' },
@@ -97,7 +161,6 @@ module.exports = {
             { title: '+38 063 56 87 154', price: 5, image: 'lifecell-icon.jpg', date: 'Wen, 14' }
         ]
 };
-
 
 
 // const transactionsItems = [

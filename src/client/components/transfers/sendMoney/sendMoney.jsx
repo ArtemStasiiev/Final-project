@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Contacts from "./contacts/contacts";
 import { contactsItem } from "../../../config/data.config";
 import "../../../styles/components/transfer/sendMoney.scss";
+
 export default function SendMoney() {
   const [persons] = useState(contactsItem);
   const [word, setWord] = useState("");
@@ -23,9 +23,9 @@ export default function SendMoney() {
   };
 
   return (
-    <div className="Send-Money">
+    <div className="send-money">
       <header>Send money</header>
-      <div className="Send-Money__Input-Con">
+      <div className="send-money__input-con">
         <input
           type="text"
           placeholder="Enter name"
@@ -33,17 +33,12 @@ export default function SendMoney() {
         />
         <p>or choose from list</p>
       </div>
-
       <header>Contacts</header>
-      <div className="Send-Money__Contacts-Con">
+      <div className="send-money__contacts">
         {filterDisplay.map((person, i) => (
           <ul key={i}>
-            <li className="Contacts-Item">
-              <img
-                className="listImg"
-                src={require(`../../../../img/${person.image}`)}
-                alt=""
-              />
+            <li className="send-money__contacts-item">
+              <img src={require(`../../../../img/${person.image}`)} alt="" />
               <p>{person.name}</p>
             </li>
           </ul>
