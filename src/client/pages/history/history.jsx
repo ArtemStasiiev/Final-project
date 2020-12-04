@@ -2,7 +2,6 @@ import React from "react";
 import "../../styles/pages/history.scss";
 import TransactionsItem from "../../components/history/transactionsItem";
 import BillsItem from "../../components/history/billsItem";
-
 import {
   transactionsItemsToday,
   transactionsItemsYesterday,
@@ -58,10 +57,10 @@ export default function History() {
   return (
     <div className="history">
       <div className="history__transactions">
-        <header>Transactions</header>
-        <div className="history__transactions-items">
+        <h4>Transactions</h4>
+        <section className="history__transactions-items">
           <div className="history__transactions-items-today">
-            <div className="history__transactions-date">Today</div>
+            <label className="history__transactions-date">Today</label>
             {transactionsItemsTodayData}
           </div>
           <div className="history__transactions-items-yesterday">
@@ -72,25 +71,25 @@ export default function History() {
             <div className="history__transactions-date">2 days ago</div>
             {transactionsItemsDaysAgoData}
           </div>
-        </div>
+        </section>
       </div>
 
       <div className="history__bills">
-        <header>Bills</header>
-        <div className="history__bills-items">
-          <div className="history__bills-items-month">
-            <div className="history__bills-items-date">December</div>
+        <h4>Bills</h4>
+        <section className="history__bills-items">
+          <div className="history__bills-items-con">
+            <label className="history__bills-items-date">December</label>
             {billsItemData}
           </div>
-          <div className="history__bills-items-month">
-            <div className="history__bills-items-date">November</div>
+          <div className="history__bills-items-con">
+            <label className="history__bills-items-date">November</label>
             <div className="scroll-con">{billsItemMoreData}</div>
           </div>
-          <div className="history__bills-items-month">
-            <div className="history__bills-items-date">October</div>
+          <div className="history__bills-items-con">
+            <label className="history__bills-items-date">October</label>
             {billsItemData}
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

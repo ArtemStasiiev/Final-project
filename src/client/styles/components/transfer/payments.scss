@@ -1,16 +1,13 @@
-.payments {
-  height: 100%;
+@import "../../components/variables/variables.scss";
+  
   .payments__items {
     height: 95%;
-    // border: 1px solid red;
     display: flex;
     justify-content: center;
     .payments__item-con {
-      // border: 1px solid red;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      // width: 80%;
       .payments__item {
         display: flex;
         flex-direction: column;
@@ -19,16 +16,16 @@
         width: 120px;
         height: 120px;
         border: 2px solid rgb(40, 41, 46);
-        font-size: 14px;
+        font-size: $font-size__regular;
         border-radius: 10px;
         cursor: pointer;
         &:hover {
-          background-color: rgb(48, 49, 53);
+          background-color: $icon-con-color;
         }
         .payments__icon-con {
           width: 40px;
           height: 40px;
-          background-color: rgb(48, 49, 53);
+          background-color: $icon-con-color;
           border-radius: 50%;
           display: flex;
           justify-content: center;
@@ -42,82 +39,58 @@
         p {
           text-align: center;
           margin-top: 10px;
-          color: rgb(225, 225, 227);
+          color: $regular-font-color;
         }
       }
     }
   }
-}
 
 @media screen and (max-width: 1396px) {
-  .payments {
     .payments__items {
       .payments__item-con {
         width: 300px;
-        // border: 1px solid green;
       }
     }
-  }
 }
 @media screen and (max-width: 1000px) {
-  .payments {
     .payments__items {
       .payments__item-con {
-        // width: 300px;
         width: 100%;
-        // border: 1px solid green;
       }
     }
-  }
 }
 
 @media screen and (max-width: 856px) {
-  .payments {
     .payments__items {
       .payments__item-con {
         width: 450px;
-        // width: 100%;
-        // border: 1px solid green;
       }
     }
-  }
 }
 
 @media screen and (max-width: 700px) {
-  .payments {
     .payments__items {
       .payments__item-con {
-        // width: 450px;
         width: 100%;
-        // border: 1px solid green;
       }
     }
-  }
 }
 
 @media screen and (max-width: 604px) {
-  .payments {
     .payments__items {
       .payments__item-con {
         width: 450px;
-        // width: 100%;
-        // border: 1px solid green;
       }
     }
-  }
 }
 
 @media screen and (max-width: 600px) {
-  .payments {
     .payments__items {
       .payments__item-con {
         width: 450px;
-        // width: 100%;
-        // border: 1px solid green;
         .payments__item {
           width: 110px;
         }
       }
     }
-  }
 }

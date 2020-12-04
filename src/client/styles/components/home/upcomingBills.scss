@@ -1,85 +1,70 @@
-$font-color: rgb(225, 225, 227);
-@mixin justify-content__space-between {
+@import "../../components/variables/variables.scss";
+
+.home__upcoming-bills-month {
+  @include label;
+}
+.bills {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .bills__left {
+    width: 80%;
+    display: flex;
+    .bills__img-con {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background-color:rgb(45, 48, 55);
+      border-radius: 50%;
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .bills__left-info {
+      margin-left: 10px;
+      p {
+        color: $regular-font-color;
+        font-size: $font-size__regular;
+      }
+
+      .bills__date {
+        color: $price-date-color;
+        margin-top: 5px;
+        font-size: $font-size__small;
+      }
+    }
+  }
+  .bills__right {
     display: flex;
     justify-content: space-between;
-}
-.home__upcoming-bills-month {
-    width: 15%;
-    width: 70px;
-    background-color: rgb(40, 41, 46);
-    display: flex;
-    justify-content: center;
     align-items: center;
-    height: 20px;
-    color: rgb(116, 116, 116);
-    font-size: 12px;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    width: 60px;
+    font-size: $font-size__regular;
+    color: $regular-font-color;
+    button {
+      background-color: rgb(20, 20, 22);
+      color: $price-date-color;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      font-size: $font-size__small;
+    }
+  }
 }
-
-.bills {
-    @include justify-content__space-between;
-    margin-top: 12px;
-    border-radius: 10px;
-    &:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    .bills__left {
-        width: 80%;
-        display: flex;
-        img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .bills__left-info {
-            margin-left: 10px;
-            div {
-                color: $font-color;
-                font-size: 14px;
-            }
-        
-            .bills__date {
-                color: rgb(116, 116, 116);
-                font-size: 14px;
-                margin-top: 5px;
-                font-size: 12px;
-            }
-        }
-    }
-    .bills__right {
-        width: 60px;
-        @include justify-content__space-between;
-        align-items: center;
-        font-size: 14px;
-        color: $font-color;
-        button {
-            background-color: rgb(20, 20, 22);
-            color: rgb(116, 116, 116);
-            border: none;
-            cursor: pointer;
-            outline: none;
-            font-size: 12px;
-        }
-    }
-}
-
 
 @media screen and (max-width: 800px) {
-    // .Bills__Left-Con {
-    //     width: 60%;
-    // }
-    .bills {
-        .bills__right {
-            width: 15%;
-        }
+  .bills {
+    .bills__right {
+      width: 15%;
     }
-
-    // .Bills {
-    //     margin-top: 30px;
-    //     font-size: 17px;
-    // }
+  }
 }

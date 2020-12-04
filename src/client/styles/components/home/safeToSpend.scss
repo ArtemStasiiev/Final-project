@@ -1,7 +1,9 @@
+@import '../../components/variables/variables.scss';
+
 .safe-to-spend__border {
   width: 170px;
   height: 170px;
-  border: 10px solid rgb(35, 191, 126);
+  border: 10px solid $line-color__green;
   border-radius: 50%;
   margin: 20px auto;
   display: flex;
@@ -15,7 +17,7 @@
     line-height: 30px;
     .safe-to-spend__ammount {
       font-size: 20px;
-      color: rgb(225, 225, 227);
+      color: $regular-font-color;
     }
     .safe-to-spend__date {
       color: rgb(72, 73, 78);

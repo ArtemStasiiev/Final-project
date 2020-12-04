@@ -3,8 +3,8 @@ import "../../../styles/components/home/spendingBreakdown.scss";
 
 export default function SpendingBreakdown(props) {
   return (
-    <div className="spending-breakdown__items">
-      <div className="spending-breakdown__type">{props.title}</div>
+    <li className="spending-breakdown__items">
+      <p className="spending-breakdown__type">{props.title}</p>
       <div className="spending-breakdown__price">
         ${props.ammount}
         <div className="spending-breakdown__line-background">
@@ -14,6 +14,6 @@ export default function SpendingBreakdown(props) {
           ></div>
         </div>
       </div>
-    </div>
+    </li>
   );
 }

@@ -21,18 +21,20 @@ export default function UpcomingBills(props) {
     );
   };
   return (
-    <div className="bills">
+    <li className="bills">
       <div className="bills__left">
-        <img src={require(`../../../../img/${props.image}`)} alt="" />
+        <div className="bills__img-con">
+          <img src={require(`../../../../img/${props.image}`)} alt="" />
+        </div>
         <div className="bills__left-info">
-          <div>{props.title}</div>
-          <div className="bills__date">{selectedDate}</div>
+          <p>{props.title}</p>
+          <span className="bills__date">{selectedDate}</span>
         </div>
       </div>
       <div className="bills__right">
         ${props.price}
         <button onClick={getNextDate}>Pay</button>
       </div>
-    </div>
+    </li>
   );
 }

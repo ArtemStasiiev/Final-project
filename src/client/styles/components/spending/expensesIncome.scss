@@ -1,3 +1,5 @@
+@import "../../components/variables/variables.scss";
+
 .expenses-income {
   display: flex;
   justify-content: space-between;
@@ -8,18 +10,17 @@
   }
   .expenses__sum,
   .income__sum {
-    width: 100%;
     height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    color: rgb(225, 225, 227);
+    color: $regular-font-color;
     span {
       margin-left: 10px;
       font-size: 20px;
       margin-top: 20px;
-      color: rgb(104, 104, 104);
+      color: $price-date-color;
     }
   }
 }

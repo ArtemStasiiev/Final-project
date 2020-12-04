@@ -3,17 +3,27 @@ import "../../styles/pages/transfers.scss";
 import SendMoney from "../../components/transfers/sendMoney/sendMoney";
 import TransferField from "../../components/transfers/transfer/transferField";
 import Payments from "../../components/transfers/payments/payments";
+import {
+  contactsItem,
+  briefcase,
+  creditCards,
+  debitCard
+} from "../../config/data.config";
 
 export default function Transfer() {
   return (
-    <div className="Transfer">
-      <div className="Transfer__Left-Con">
-        <SendMoney />
+    <div className="transfer-con">
+      <div className="transfer__left">
+        <SendMoney contactsItem={contactsItem} />
       </div>
-      <div className="Transfer__Center-Con">
-        <TransferField />
+      <div className="transfer__center">
+        <TransferField
+          briefcase={briefcase}
+          creditCards={creditCards}
+          debitCard={debitCard}
+        />
       </div>
-      <div className="Transfer__Right-Con">
+      <div className="transfer__right">
         <Payments />
       </div>
     </div>

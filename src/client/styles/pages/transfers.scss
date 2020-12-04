@@ -1,58 +1,22 @@
-.Transfer {
-  // background-color: rgb(75, 75, 75);
+.transfer-con {
   width: 96%;
-  display: flex;
-  justify-content: space-between;
-  // border-radius: 10px;
-}
-
-.Transfer__Left-Con,
-.Transfer__Right-Con,
-.Transfer__Center-Con {
-  width: 32%;
-  // height: 100%;
-  // border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-gap: 30px;
 }
 
 @media screen and (max-width: 1000px) {
-  .Transfer {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: center;
-      // width: 80%;
-      // header {
-      //   font-size: 16px;
-      // }
+  .transfer-con {
+    grid-template-columns: 60%;
+    justify-content: center;
+    .transfer__right {
+      padding-bottom: 20px;
+    }
   }
-  .Transfer__Left-Con,
-  .Transfer__Center-Con,
-  .Transfer__Right-Con {
-  // width: 100%;
-  width: 70%;
-  }
-  // .Transfer__Right-Con {
-  //     height: 40%;
-  // }
 }
 
 @media screen and (max-width: 700px) {
-  .Transfer {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: center;
-      // header {
-      //   font-size: 16px;
-      // }
+  .transfer-con {
+    grid-template-columns: 100%;
   }
-  .Transfer__Left-Con,
-  .Transfer__Center-Con,
-  .Transfer__Right-Con {
-  width: 100%;
-  // width: 70%;
-  }
-  // .Transfer__Right-Con {
-  //     height: 40%;
-  // }
 }

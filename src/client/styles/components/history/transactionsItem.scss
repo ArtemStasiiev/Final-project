@@ -1,13 +1,17 @@
+@import "../../components/variables/variables.scss";
+
 .transactions__item {
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: $font-size__regular;
   border-radius: 10px;
   margin-top: 10px;
+  color: $regular-font-color;
   &:hover {
     background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
   }
   .transactions__item-left {
     display: flex;
@@ -19,7 +23,7 @@
       object-fit: cover;
       border-radius: 50%;
     }
-    div {
+    p {
       margin-left: 15px;
     }
   }

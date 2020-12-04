@@ -1,58 +1,50 @@
+@import "../components/variables/variables.scss";
+
 .spending {
-    width: 96%;
+  width: 96%;
+  display: grid;
+  grid-template-columns: repeat(2, 48%);
+  grid-gap: 55px;
+  .spending__left {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    border-radius: 10px;
-    .spending__left,
-    .spending__right {
-    width: 48%;
-    height: 100%;
-}
-    .spending__left {
+    .spending__info {
+      height: 20%;
+      .spending__info-sum {
+        height: 70%;
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 50px;
+        color: rgb(19, 255, 221);
+        span {
+          margin-left: 10px;
+          font-size: 20px;
+          margin-top: 20px;
+          color: $price-date-color;
+        }
+      }
+      .spending__info-lines {
+        display: flex;
         justify-content: space-between;
-        .spending__info {
-            width: 100%;
-            height: 20%;
-            .spending__info-sum {
-                width: 100%;
-                height: 70%;
-                display: flex;
-                align-items: center;
-                margin-left: 10px;
-                font-size: 50px;
-                color: #13FFDD;
-                span {
-                    margin-left: 10px;
-                    font-size: 20px;
-                    margin-top: 20px;
-                    color: rgb(104, 104, 104);
-                }
-            }
-            .spending__info-lines {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-        header {
-            font-size: 16px;
-        }
-        header:nth-child(2) {
-            margin-top: 20px;
-        }
+      }
     }
+    h4:nth-child(2) {
+      margin-top: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
-    .spending {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        .spending__left,
-        .spending__right {
-            width: 100%;
-        }
+  .spending {
+    grid-template-columns: 100%;
+    .spending__left {
+      grid-row: 2;
+      padding-bottom: 20px;
     }
+    .spending__right {
+      grid-row: 1;
+    }
+  }
 }

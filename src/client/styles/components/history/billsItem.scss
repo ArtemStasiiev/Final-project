@@ -1,33 +1,41 @@
+@import "../../components/variables/variables.scss";
+
 .bills__item {
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: $font-size__regular;
   border-radius: 10px;
   margin-top: 10px;
+  color: $regular-font-color;
   &:hover {
     background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
   }
   .bills__item-left {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    img {
-      border-radius: 50%;
+    .bills__img-con {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 40px;
       height: 40px;
-      object-fit: cover;
+      background-color:rgb(45, 48, 55);
+      border-radius: 50%;
+      img {
+        width: 25px;
+        height: 25px;
+      }
     }
     .bills__item-title-date {
       margin-left: 15px;
-      .bills__item-date {
-        font-size: 12px;
-        color: rgb(116, 116, 116);
+      p {
+        font-size: $font-size__small;
+        color: $price-date-color;
       }
     }
   }
-  // .bills__item-right {
-  //   margin-right: 20px;
-  // }
 }

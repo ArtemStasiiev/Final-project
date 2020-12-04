@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../styles/components/home/sendMoney.scss";
 import SendMoneyPhotos from "./sendMoneyItems/sendMoneyPhotos";
 import RecentOperations from "./recentOperations/recentOperations";
@@ -11,25 +11,25 @@ export default function SendMoney() {
 
   const recentOperationsData = recentOperations.map((element) => (
     <RecentOperations
-      title={element.title}
+      title={element.title} 
       price={element.price}
       image={element.image}
     />
   ));
 
   return (
-    <div className="send-money">
-      <header>Send money</header>
+    <section className="send-money">
+      <h4>Send money</h4>
       <div className="send-money__inner">
-        <div className="send-money__recent">Recent</div>
+        <label className="send-money__recent">Recent</label>
         <div className="contacts-con">
           <button className="plus-btn">+</button>
           <div className="img-con">{sendMoneyPhoto}</div>
         </div>
-        <header>Recent operations</header>
-        <div className="recent-operations__today">Today</div>
+        <h4>Recent operations</h4>
+        <label className="recent-operations__today">Today</label>
         {recentOperationsData}
       </div>
-    </div>
+    </section>
   );
 }

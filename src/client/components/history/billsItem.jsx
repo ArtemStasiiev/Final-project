@@ -3,15 +3,17 @@ import "../../styles/components/history/billsItem.scss";
 
 export default function BillsItem(props) {
   return (
-    <div className="bills__item">
+    <li className="bills__item">
       <div className="bills__item-left">
+      <div className="bills__img-con">
         <img src={require(`../../../img/${props.image}`)} alt="" />
+      </div>
         <div className="bills__item-title-date">
           {props.title}
-          <div className="bills__item-date">{props.date}</div>
+          <p>{props.date}</p>
         </div>
       </div>
-      <div className="bills__item-right">- ${props.price}</div>
-    </div>
+      <p>- ${props.price}</p>
+    </li>
   );
 }

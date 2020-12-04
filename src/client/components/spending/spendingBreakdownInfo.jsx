@@ -3,13 +3,13 @@ import "../../styles/components/spending/spendingBreakdownInfo.scss";
 
 export default function SpendingBreakdownInfo(props) {
   return (
-    <div className="spending-breakdown__item">
+    <li className="spending-breakdown__item">
       <div className="spending-breakdown__left">
-        <div className="spending-breakdown__icon">
-          <div style={{ backgroundColor: `${props.color}`, dispaly: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {/* <FontAwesomeIcon icon={props.icon} /> */}
-            <img src={require(`../../../img/${props.icon}`)} style={{width: '25px', height: '25px', objectFit: 'cover'}} alt="" />
-          </div>
+        <div
+          className="spending-breakdown__icon"
+          style={{ backgroundColor: `${props.color}` }}
+        >
+          <img src={require(`../../../img/${props.icon}`)} alt="" />
         </div>
         <div className="spending-breakdown__name">
           {props.title}
@@ -21,9 +21,9 @@ export default function SpendingBreakdownInfo(props) {
           ></div>
         </div>
       </div>
-      <div>
+      <p>
         {props.sum} <span>USD</span>{" "}
-      </div>
-    </div>
+      </p>
+    </li>
   );
 }

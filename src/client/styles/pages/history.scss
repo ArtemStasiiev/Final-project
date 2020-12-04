@@ -1,32 +1,26 @@
+@import "../components/variables/variables.scss";
+
 .history {
   width: 96%;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 10px;
-  .history__transactions,
-  .history__bills {
-    width: 48%;
-    header {
-      border-bottom: none;
-    }
-  }
-  .history__transactions-items,
-  .history__bills-items {
-    height: 94%;
-  }
-  .history__transactions-items-days-ago {
-    border-top: 2px solid rgb(40, 41, 46);
-  }
-  .history__transactions-items-today,
-  .history__transactions-items-yesterday {
-    border-top: 2px solid rgb(40, 41, 46);
+  display: grid;
+  grid-template-columns: repeat(2, 48%);
+  grid-gap: 55px;
+  .history__transactions-items-today {
     padding-bottom: 10px;
   }
-  .history__bills-items-month {
-    height: 30%;
-    border-top: 2px solid rgb(40, 41, 46);
+  .history__transactions-items-yesterday,
+  .history__transactions-items-days-ago {
+    border-top: 2px solid $header-color;
+    padding-bottom: 10px; 
+  }
+  .history__bills-items-con {
+    padding-bottom: 10px;
+    border-top: 2px solid $header-color;
+    &:nth-child(1) {
+      border: none;
+    }
     .scroll-con {
-      height: 89%;
+      height: 157px;
       overflow: hidden;
       overflow-y: scroll;
       &::-webkit-scrollbar {
@@ -49,13 +43,12 @@
   }
 }
 
+
 @media screen and (max-width: 800px) {
   .history {
-    flex-direction: column;
-    align-items: center;
-      .history__transactions,
-      .history__bills {
-        width: 100%;
-      }
+    grid-template-columns: 100%;
+    .history__bills {
+      padding-bottom: 20px;
+    }
   }
 }

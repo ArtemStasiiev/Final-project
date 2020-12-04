@@ -29,12 +29,12 @@ export default function MyGoals() {
     setSecondLineWidth(resultWidth);
   };
   return (
-    <div className="my-goals">
-      <header>My goals</header>
-      <section>6 Mos</section>
+    <section className="my-goals">
+      <h4>My goals</h4>
+      <label>6 Mos</label>
       <div className="my-goals__items">
         {firstPrice < 1900 ? (
-          <div className="my-goals__item">
+          <li className="my-goals__item">
             <div className="my-goal__item-top">
               <p>macBook</p>
               <button
@@ -56,11 +56,11 @@ export default function MyGoals() {
                 ></div>
               </div>
             </div>
-          </div>
+          </li>
         ) : null}
 
         {secondPrice < 900 ? (
-          <div className="my-goals__item">
+          <li className="my-goals__item">
             <div className="my-goal__item-top">
               <p>iPhone 11</p>
               <button
@@ -79,9 +79,9 @@ export default function MyGoals() {
                 ></div>
               </div>
             </div>
-          </div>
+          </li>
         ) : null}
       </div>
-    </div>
+    </section>
   );
 }

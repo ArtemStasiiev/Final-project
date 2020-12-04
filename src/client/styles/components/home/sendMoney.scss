@@ -1,81 +1,62 @@
-$font-color: rgb(225, 225, 227);
-$recent-today__background-color: rgb(40, 41, 46);
-@mixin object-centered {
+@import "../../components/variables/variables.scss";
+
+.send-money__recent,
+.recent-operations__today {
+  @include label;
+}
+.contacts-con {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  .plus-btn {
+    @include object-centered;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 35px;
+    background-color: $label-color;
+    color: $regular-font-color;
+    cursor: pointer;
+  }
+  .img-con {
+    overflow: auto;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
-
-.send-money {
-  height: 50%;
-  .send-money__inner {
-    height: 87%;
-    .send-money__recent,
-    .recent-operations__today {
-      width: 70px;
-      background-color: rgb(40, 41, 46);
-      @include object-centered;
-      height: 20px;
-      color: rgb(116, 116, 116);
-      font-size: 12px;
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-    }
-    .contacts-con {
-      margin-top: 10px;
-      display: flex;
-      width: 100%;
-      .plus-btn {
-        @include object-centered;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: none;
-        font-size: 35px;
-        background-color: rgb(41, 42, 47);
-        color: $font-color;
-        cursor: pointer;
-      }
-      .img-con {
-      overflow: auto;
-      white-space: nowrap;
-      &::-webkit-scrollbar {
-          display: none;
-        }
-      }
-    }
-    .send-money__photos {
-      width: 40px;
-      height: 40px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-left: 13px;
-      cursor: pointer;
-    }
-    .recent-operations {
-      display: flex;
-      align-items: center;
-      margin-top: 12px;
-      color: $font-color;
-      border-radius: 10px;
-      &:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.3);
-      }
-      img {
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        border-radius: 50%;
-        cursor: pointer;
-      }
-      .recent-operations__info {
-        display: flex;
-        justify-content: space-between;
-        font-size: 14px;
-        margin-left: 10px;
-        width: 87%;
-      }
-    }
+.send-money__photos {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 13px;
+  cursor: pointer;
+}
+.recent-operations {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  color: $regular-font-color;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .recent-operations__info {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size__regular;
+    margin-left: 10px;
+    width: 87%;
   }
 }

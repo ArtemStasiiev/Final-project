@@ -24,12 +24,12 @@ export default function ExpenseChart() {
                     scales: {
                         xAxes: [{
                             gridLines: {
-                                display:false
+                                display: false
                             }
                         }],
                         yAxes: [{
                             gridLines: {
-                                display:false
+                                display: false
                             }   
                         }]
                     }

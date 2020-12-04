@@ -2,10 +2,14 @@ const { HashRouter } = require("react-router-dom");
 
 module.exports = {
     // home page
+    cardMoney: 16.234,
+    masterCard: 'mastercard.png',
+    visaLogo: 'Visa-Logo.png',
+    masterCardLogo: 'MasterCard-Logo.png',
     upcomingBills: [
-            { title: 'Netflix', price: 12.00, image: 'netflix-icon.jpg', id: 1, date: '2020-07-21' },
-            { title: 'Apple TV', price: 10.00, image: 'apple-tv-icon.svg', id: 2, date: '2020-07-21' },
-            { title: '+38 063 56 87 154', price: 5.00, image: 'lifecell-icon.jpg', id: 3, date: '2020-07-21' }
+            { title: 'Netflix', price: 12.00, image: 'netflix.svg', id: 1, date: '2020-07-21' },
+            { title: 'Apple TV', price: 10.00, image: 'apple.svg', id: 2, date: '2020-07-21' },
+            { title: '+38 063 56 87 154', price: 5.00, image: 'lifecell.svg', id: 3, date: '2020-07-21' }
         ],
         monthNames: ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
@@ -32,6 +36,9 @@ module.exports = {
             {title: "Rocket Espresso", price: 10, image: 'rocket-espresso.jpg'}
         ],
         // transfer page
+        briefcase: 'briefcase.svg',
+        creditCards: 'credit-cards.svg',
+        debitCard: 'blue_card.png',
         contactsItem: [
             {image: 'face-photo(1).jpg', name: 'Aurora Richards'},
             {image: 'face-photo(2).jpg', name: 'Ben Smith'},
@@ -136,7 +143,6 @@ module.exports = {
             { title: '6804 7846 9752 2365', sum: '+ $100', image: 'face-photo(2).jpg' },
             { title: 'Walmart', sum: '- $10', image: 'walmart-icon.png' },
         ],
-
         transactionsItemsYesterday: [
             { title: '9025 8503 7501 8611', sum: '+ $50', image: 'face-photo(3).jpg' },
             { title: 'Spotify', sum: '- $5', image: 'spotify-icon.png' },
@@ -148,37 +154,19 @@ module.exports = {
             { title: 'Spotify', sum: '- $5', image: 'spotify-icon.png' },
         ],
         billsItems: [
-            { title: 'Netflix', price: 12, image: 'netflix-icon.jpg', date: 'Mon, 25' },
-            { title: 'Apple TV', price: 10, image: 'apple-tv-icon.svg', date: 'Fr, 17' },
-            { title: '+38 063 56 87 154', price: 5, image: 'lifecell-icon.jpg', date: 'Wen, 14' }
+            { title: 'Netflix', price: 12, image: 'netflix.svg', date: 'Mon, 25' },
+            { title: 'Apple TV', price: 10, image: 'apple.svg', date: 'Fr, 17' },
+            { title: '+38 063 56 87 154', price: 5, image: 'lifecell.svg', date: 'Wen, 14' }
         ],
         billsItemsMore: [
-            { title: 'Netflix', price: 12, image: 'netflix-icon.jpg', date: 'Mon, 25' },
-            { title: 'Apple TV', price: 10, image: 'apple-tv-icon.svg', date: 'Fr, 17' },
-            { title: '+38 063 56 87 154', price: 5, image: 'lifecell-icon.jpg', date: 'Wen, 14' },
-            { title: 'Netflix', price: 12, image: 'netflix-icon.jpg', date: 'Mon, 25' },
-            { title: 'Apple TV', price: 10, image: 'apple-tv-icon.svg', date: 'Fr, 17' },
-            { title: '+38 063 56 87 154', price: 5, image: 'lifecell-icon.jpg', date: 'Wen, 14' }
+          { title: 'Netflix', price: 12, image: 'netflix.svg', date: 'Mon, 25' },
+          { title: 'Apple TV', price: 10, image: 'apple.svg', date: 'Fr, 17' },
+          { title: '+38 063 56 87 154', price: 5, image: 'lifecell.svg', date: 'Wen, 14' },
+          { title: 'Netflix', price: 12, image: 'netflix.svg', date: 'Mon, 25' },
+          { title: 'Apple TV', price: 10, image: 'apple.svg', date: 'Fr, 17' },
+          { title: '+38 063 56 87 154', price: 5, image: 'lifecell.svg', date: 'Wen, 14' },
+          { title: 'Netflix', price: 12, image: 'netflix.svg', date: 'Mon, 25' },
+          { title: 'Apple TV', price: 10, image: 'apple.svg', date: 'Fr, 17' },
+          { title: '+38 063 56 87 154', price: 5, image: 'lifecell.svg', date: 'Wen, 14' }
         ]
 };
-
-
-// const transactionsItems = [
-//     { title: '5367 7603 5710 9553', sum: 50, image: 'pb-logo.jpg' },
-//     { title: 'Rocket Espresso', sum: 10, image: 'rocket-espresso.jpg' },
-//     { title: '6804 7846 9752 2365', sum: 100, image: 'pumb-bank.png' },
-//     { title: 'Rocket Espresso', sum: 10, image: 'rocket-espresso.jpg' },
-//     { title: '9025 8503 7501 8611', sum: 50, image: 'monobank.jpg' },
-//     { title: '5367 7603 5710 9553', sum: 50, image: 'pb-logo.jpg' },
-//     { title: 'Rocket Espresso', sum: 10, image: 'rocket-espresso.jpg' },
-//     { title: '6804 7846 9752 2365', sum: 100, image: 'pumb-bank.png' },
-//     // { title: 'Rocket Espresso', sum: 10, image: require('../../../img/rocket-espresso.jpg') },
-//     // { title: '9025 8503 7501 8611', sum: 50, image: require('../../../img/monobank.jpg') }
-// ];
-
-    // const billsItems = [
-    //     { title: 'Netflix', price: 12, image: require('../../../img/netflix-icon.jpg') },
-    //     { title: 'Apple TV', price: 10, image: require('../../../img/apple-tv-icon.svg') },
-    //     { title: '+38 063 56 87 154', price: 5, image: require('../../../img/lifecell-icon.jpg') },
-    //     { title: 'Credit Agricole', price: 100, image: require('../../../img/logo-credit-agricole-big.gif') },
-    // ];

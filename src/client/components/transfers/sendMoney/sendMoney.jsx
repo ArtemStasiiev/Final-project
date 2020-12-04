@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { contactsItem } from "../../../config/data.config";
 import "../../../styles/components/transfer/sendMoney.scss";
 
-export default function SendMoney() {
-  const [persons] = useState(contactsItem);
+export default function SendMoney(props) {
+  const [persons] = useState(props.contactsItem);
   const [word, setWord] = useState("");
   const [filterDisplay, setFilterDisplay] = useState(persons);
 
@@ -23,17 +22,17 @@ export default function SendMoney() {
   };
 
   return (
-    <div className="send-money">
-      <header>Send money</header>
+    <section className="send-money">
+      <h4>Send money</h4>
       <div className="send-money__input-con">
         <input
           type="text"
           placeholder="Enter name"
           onChange={(e) => handleChange(e.target.value)}
         />
-        <p>or choose from list</p>
+        <label>or choose from list</label>
       </div>
-      <header>Contacts</header>
+      <h4>Contacts</h4>
       <div className="send-money__contacts">
         {filterDisplay.map((person, i) => (
           <ul key={i}>
@@ -44,6 +43,6 @@ export default function SendMoney() {
           </ul>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

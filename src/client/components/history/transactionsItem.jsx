@@ -3,12 +3,12 @@ import "../../styles/components/history/transactionsItem.scss";
 
 export default function TransactionsItem(props) {
   return (
-    <div className="transactions__item">
+    <li className="transactions__item">
       <div className="transactions__item-left">
         <img src={require(`../../../img/${props.image}`)} alt="" />
-        <div>{props.title}</div>
+        <p>{props.title}</p>
       </div>
-      <div className="transactions__item-right">{props.sum}</div>
-    </div>
+      {props.sum}
+    </li>
   );
 }

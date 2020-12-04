@@ -22,27 +22,27 @@ export default function Spending() {
       lineWidth={element.lineWidth}
     />
   ));
-  const spendingInfoDate = spendingInfo.map((element) => (
+  const spendingInfoData = spendingInfo.map((element) => (
     <SpendingInfo color={element.color} width={element.width} />
   ));
 
   return (
     <div className="spending">
-      <div className="spending__left">
+      <section className="spending__left">
         <div className="spending__info">
-          <header>Spending</header>
+          <h4>Spending</h4>
           <div className="spending__info-sum">
             {spending} <span>USD</span>
           </div>
-          <div className="spending__info-lines">{spendingInfoDate}</div>
+          <div className="spending__info-lines">{spendingInfoData}</div>
         </div>
-        <header>Spending breakdown</header>
+        <h4>Spending breakdown</h4>
         {spendingBreakdownData}
-      </div>
-      <div className="spending__right">
+      </section>
+      <section className="spending__right">
         <ExpensesIncome expenses={expenses} income={income} />
         <ExpenseChart />
-      </div>
+      </section>
     </div>
   );
 }
